@@ -1,0 +1,23 @@
+autodetach on
+
+shell -${SHELL}
+defscrollback 2024
+startup_message off
+hardstatus on
+
+vbell off
+hardstatus alwayslastline
+hardstatus string '%{= kG}[ %{G}%H %{g}][%= %{= kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B} %d/%m %{W}%c %{g}]'
+
+
+screen -t "code" 3
+screen -t "shell" 7
+screen -t "test" 11
+screen -t "js watch" 13
+screen -t "runserver" 15
+
+#altscreen on
+#term screen-256color
+#hardstatus alwayslastline
+#hardstatus string '%{= kG}%-Lw%{= kW}%50> %n%f* %t%{= kG}%+Lw%< %{= kG}%-=%c:%s%{-}'
+#hardstatus string '%{= kG}[ %{G}%H %{g}][%= %{= kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B} %m-%d %{W}%c %{g}]'
