@@ -21,7 +21,7 @@ export PATH="$HOME/.jenv/bin:$PATH"
 eval "$(jenv init -)"
 
 # Haskell
-export PATH="$HOME/Library/Haskell/bin:$PATH"
+#export PATH="$HOME/Library/Haskell/bin:$PATH"
 
 # Pymacs
 export PYTHONPATH=$PYTHONPATH:~/.emacs.d/Pymacs/
