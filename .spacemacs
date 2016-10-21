@@ -317,6 +317,7 @@ executes.
  This function is mostly useful for variables that need to be set
 before packages are loaded. If you are unsure, you should try in setting them in
 `dotspacemacs/user-config' first."
+  (setq-default git-magit-status-fullscreen t)  ;; Display the magit status buffer in fullscreen
   )
 
 (defun dotspacemacs/user-config ()
@@ -327,7 +328,8 @@ This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
   (setq-default persp-auto-save-opt 0)
-  (setq python-shell-completion-native-enable nil) ;; Python shell temporary fix (upstream bug):
+  (setq python-shell-completion-native-enable nil)  ;; Python shell temporary fix (upstream bug)
+  (global-git-commit-mode t)  ;; Use spacemacs for editing git commits messages
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
