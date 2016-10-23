@@ -42,7 +42,6 @@ values."
      colors
      django
      emacs-lisp
-     emacs-lisp
      git
      github
      go
