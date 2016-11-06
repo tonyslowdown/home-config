@@ -328,6 +328,10 @@ explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
   (setq-default persp-auto-save-opt 0)
   (setq python-shell-completion-native-enable nil)  ;; Python shell temporary fix (upstream bug)
+  ;; Multiple cursors
+  (global-set-key (kbd "C-d") 'mc/mark-next-like-this)
+  (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
+  (global-set-key (kbd "C-c C-d") 'mc/mark-all-like-this)
   (global-git-commit-mode t)  ;; Use spacemacs for editing git commits messages
   )
 
