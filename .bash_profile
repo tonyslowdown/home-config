@@ -11,10 +11,13 @@ alias hideFiles='defaults write com.apple.finder AppleShowAllFiles NO; killall F
 export HISTFILESIZE=9999999
 export HISTSIZE=999999
 
-# Virtualenv
-export WORKON_HOME=$HOME/.virtualenvs
-export PROJECT_HOME=$HOME/Devel
-source /usr/local/bin/virtualenvwrapper.sh
+# added by Anaconda3 4.2.0 installer
+export PATH="/Users/jjinking/anaconda3/bin:$PATH"
+
+# # Virtualenv
+# export WORKON_HOME=$HOME/.virtualenvs
+# export PROJECT_HOME=$HOME/Devel
+# source /usr/local/bin/virtualenvwrapper.sh
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
@@ -25,7 +28,7 @@ eval "$(jenv init -)"
 #export PATH="$HOME/Library/Haskell/bin:$PATH"
 
 # Pymacs
-export PYTHONPATH=$PYTHONPATH:~/.emacs.d/Pymacs/
+# export PYTHONPATH=$PYTHONPATH:~/.emacs.d/Pymacs/
 
 # Go
 export GOPATH=$HOME/go
