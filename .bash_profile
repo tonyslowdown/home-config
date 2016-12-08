@@ -6,7 +6,8 @@ alias ll='ls -alG'
 alias rm='rm -i'
 
 alias emacs='emacs -nw'
-
+alias showFiles='defaults write com.apple.finder AppleShowAllFiles YES; killall Finder /System/Library/CoreServices/Finder.app'
+alias hideFiles='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/CoreServices/Finder.app'
 export HISTFILESIZE=9999999
 export HISTSIZE=999999
 
