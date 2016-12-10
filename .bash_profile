@@ -12,7 +12,7 @@ export HISTFILESIZE=9999999
 export HISTSIZE=999999
 
 # added by Anaconda3 4.2.0 installer
-export PATH="/Users/jjinking/anaconda3/bin:$PATH"
+export PATH="$HOME/anaconda3/bin:$PATH"
 
 # # Virtualenv
 # export WORKON_HOME=$HOME/.virtualenvs
