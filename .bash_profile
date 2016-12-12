@@ -1,3 +1,4 @@
+export PS1='\W \u\$ '
 export PATH=/usr/local/bin:$PATH
 export PATH=~/.local/bin:$PATH
 
