@@ -54,6 +54,7 @@ values."
      osx
      python
      react
+     scala
      spell-checking
      sql
      swift
