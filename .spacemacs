@@ -41,6 +41,7 @@ values."
      c-c++
      colors
      django
+     docker
      emacs-lisp
      git
      github
