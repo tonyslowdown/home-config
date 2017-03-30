@@ -22,6 +22,8 @@ export PATH="$HOME/anaconda3/bin:$PATH"
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
+
+# Java environment manager
 export PATH="$HOME/.jenv/bin:$PATH"
 eval "$(jenv init -)"
 
