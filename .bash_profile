@@ -19,6 +19,7 @@ alias hideFiles='defaults write com.apple.finder AppleShowAllFiles NO; killall F
 
 export HISTFILESIZE=99999999
 export HISTSIZE=9999999
+export HISTCONTROL=ignoredups
 
 # added by Anaconda3 4.2.0 installer
 export PATH="$HOME/anaconda3/bin:$PATH"
