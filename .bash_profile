@@ -55,3 +55,6 @@ export PATH=$PATH:/Library/TeX/Distributions/.DefaultTeX/Contents/Programs/texbi
 
 # Android NDK
 export ANDROID_NDK=/usr/local/Cellar/android-ndk/r10e
+
+# Check global ip address
+alias global_ip="curl -s checkip.dyndns.org | sed -e 's/.*Current IP Address: //' -e 's/<.*$//'"
