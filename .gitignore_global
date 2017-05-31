@@ -21,4 +21,4 @@ project/plugins/project/
 .worksheet
 .idea
 .ensime_cache
-.ensime
+.ensime*
