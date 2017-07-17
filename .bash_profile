@@ -58,3 +58,8 @@ export ANDROID_NDK=/usr/local/Cellar/android-ndk/r10e
 
 # Check global ip address
 alias global_ip="curl -s checkip.dyndns.org | sed -e 's/.*Current IP Address: //' -e 's/<.*$//'"
+
+# Name tabs
+function tab_name {
+  echo -ne "\033]0;"$*"\007"
+}
