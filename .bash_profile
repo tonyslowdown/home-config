@@ -63,3 +63,4 @@ alias global_ip="curl -s checkip.dyndns.org | sed -e 's/.*Current IP Address: //
 function tab_name {
   echo -ne "\033]0;"$*"\007"
 }
+tab_name ${PWD##*/}
