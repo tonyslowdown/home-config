@@ -144,9 +144,9 @@ values."
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '(monokai
+   dotspacemacs-themes '(sanityinc-tomorrow-night
+                         monokai
                          gotham
-                         sanityinc-tomorrow-night
                          spacemacs-dark
                          tao-yin
                          stekene-dark
@@ -337,6 +337,9 @@ you should place your code here."
   (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
   (global-set-key (kbd "C-c C-d") 'mc/mark-all-like-this)
   (global-git-commit-mode t)  ;; Use spacemacs for editing git commits messages
+  ;; Hide vertical divider between split windows (works for sanityinc-tomorrow-night theme only)
+  (set-face-background 'vertical-border "#1d1f21")
+  (set-face-foreground 'vertical-border (face-background 'vertical-border))
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
