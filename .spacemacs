@@ -341,6 +341,9 @@ you should place your code here."
   ;; Hide vertical divider between split windows (works for sanityinc-tomorrow-night theme only)
   (set-face-background 'vertical-border "#1d1f21")
   (set-face-foreground 'vertical-border (face-background 'vertical-border))
+  ;; Line number layout
+  (unless (display-graphic-p)
+    (setq linum-format "%4d \u2502 "))
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
