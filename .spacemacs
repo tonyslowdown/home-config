@@ -322,6 +322,10 @@ before packages are loaded. If you are unsure, you should try in setting them in
   (push '("melpa-stable" . "stable.melpa.org/packages/") configuration-layer--elpa-archives)
   (push '(ensime . "melpa-stable") package-pinned-packages)
   (setq-default git-magit-status-fullscreen t)  ;; Display the magit status buffer in fullscreen
+  (setq-default
+   linum-format "%4d \u2502"
+   linum-relative-format "%4s \u2502"
+   )
   )
 
 (defun dotspacemacs/user-config ()
@@ -343,7 +347,10 @@ you should place your code here."
   (set-face-foreground 'vertical-border (face-background 'vertical-border))
   ;; Line number layout
   (unless (display-graphic-p)
-    (setq linum-format "%4d \u2502 "))
+    (setq linum-format "%4d \u2502 ")
+    (set-face-attribute 'fringe nil :background "#1d1f21")
+    (set-face-attribute 'linum nil :background "#1d1f21")
+    )
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
