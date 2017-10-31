@@ -39,10 +39,14 @@ values."
      auto-completion
      better-defaults
      c-c++
+     clojure
      colors
+     csv
      django
      docker
      emacs-lisp
+     emoji
+     games
      git
      github
      go
@@ -55,13 +59,17 @@ values."
      osx
      python
      react
+     ruby
+     ruby-on-rails
      scala
+     selectric
      spell-checking
      sql
      swift
      syntax-checking
      typescript
      version-control
+     xkcd
      yaml
      (shell :variables
             shell-default-height 30
