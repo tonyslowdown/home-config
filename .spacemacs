@@ -330,6 +330,7 @@ before packages are loaded. If you are unsure, you should try in setting them in
   (push '("melpa-stable" . "stable.melpa.org/packages/") configuration-layer--elpa-archives)
   (push '(ensime . "melpa-stable") package-pinned-packages)
   (setq-default ensime-startup-snapshot-notification nil) ;; Turn off welcome message
+  (setq-default ensime-startup-notification nil) ;; Turn off welcome message again...
   (setq-default git-magit-status-fullscreen t)  ;; Display the magit status buffer in fullscreen
   (setq-default
    linum-format "%4d \u2502"
