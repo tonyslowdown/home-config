@@ -327,8 +327,6 @@ executes.
  This function is mostly useful for variables that need to be set
 before packages are loaded. If you are unsure, you should try in setting them in
 `dotspacemacs/user-config' first."
-  (push '("melpa-stable" . "stable.melpa.org/packages/") configuration-layer--elpa-archives)
-  (push '(ensime . "melpa-stable") package-pinned-packages)
   (setq-default ensime-startup-snapshot-notification nil) ;; Turn off welcome message
   (setq-default ensime-startup-notification nil) ;; Turn off welcome message again...
   (setq-default git-magit-status-fullscreen t)  ;; Display the magit status buffer in fullscreen
