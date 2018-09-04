@@ -350,11 +350,12 @@ you should place your code here."
   (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
   (global-set-key (kbd "C-c C-d") 'mc/mark-all-like-this)
   (global-git-commit-mode t)  ;; Use spacemacs for editing git commits messages
-  ;; Hide vertical divider between split windows (works for sanityinc-tomorrow-night theme only)
-  (set-face-background 'vertical-border "#1d1f21")
-  (set-face-foreground 'vertical-border (face-background 'vertical-border))
-  ;; Line number layout
+
   (unless (display-graphic-p)
+    ;; Hide vertical divider between split windows (works for sanityinc-tomorrow-night theme only)
+    (set-face-background 'vertical-border "#1d1f21")
+    (set-face-foreground 'vertical-border (face-background 'vertical-border))
+    ;; Line number layout
     (setq linum-format "%4d \u2502 ")
     (set-face-attribute 'fringe nil :background "#1d1f21")
     (set-face-attribute 'linum nil :background "#1d1f21")
