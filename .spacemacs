@@ -345,6 +345,7 @@ explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
   (setq-default persp-auto-save-opt 0)
   (setq python-shell-completion-native-enable nil)  ;; Python shell temporary fix (upstream bug)
+
   ;; Multiple cursors
   (global-set-key (kbd "M-n") 'mc/mark-next-like-this)
   (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
@@ -360,6 +361,19 @@ you should place your code here."
     (set-face-attribute 'fringe nil :background "#1d1f21")
     (set-face-attribute 'linum nil :background "#1d1f21")
     )
+
+  ;; C++ settings
+  (setq-default dotspacemacs-configuration-layers
+                '((c-c++ :variables
+                         c-c++-default-mode-for-headers 'c++-mode)))
+  (setq-default dotspacemacs-configuration-layers
+                '((c-c++ :variables c-c++-enable-clang-support t)))
+  ;; Bind clang-format-region to C-M-tab in all modes:
+  (global-set-key [C-M-tab] 'clang-format-region)
+  ;; Bind clang-format-buffer to tab on the c++-mode only:
+  (add-hook 'c++-mode-hook 'clang-format-bindings)
+  (defun clang-format-bindings ()
+    (define-key c++-mode-map [tab] 'clang-format-buffer))
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
