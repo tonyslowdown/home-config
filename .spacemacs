@@ -334,6 +334,22 @@ before packages are loaded. If you are unsure, you should try in setting them in
    linum-format "%4d \u2502"
    linum-relative-format "%4s \u2502"
    )
+
+  ;; ReactJS settings
+  (setq-default
+   ;; js2-mode
+   js2-basic-offset 2
+   ;; web-mode
+   css-indent-offset 2
+   web-mode-markup-indent-offset 2
+   web-mode-css-indent-offset 2
+   web-mode-code-indent-offset 2
+   web-mode-attr-indent-offset 2)
+  (with-eval-after-load 'web-mode
+    (add-to-list 'web-mode-indentation-params '("lineup-args" . nil))
+    (add-to-list 'web-mode-indentation-params '("lineup-concats" . nil))
+    (add-to-list 'web-mode-indentation-params '("lineup-calls" . nil)))
+
   )
 
 (defun dotspacemacs/user-config ()
@@ -361,21 +377,6 @@ you should place your code here."
     (set-face-attribute 'fringe nil :background "#1d1f21")
     (set-face-attribute 'linum nil :background "#1d1f21")
     )
-
-  ;; ReactJS settings
-  (setq-default
-   ;; js2-mode
-   js2-basic-offset 2
-   ;; web-mode
-   css-indent-offset 2
-   web-mode-markup-indent-offset 2
-   web-mode-css-indent-offset 2
-   web-mode-code-indent-offset 2
-   web-mode-attr-indent-offset 2)
-  (with-eval-after-load 'web-mode
-    (add-to-list 'web-mode-indentation-params '("lineup-args" . nil))
-    (add-to-list 'web-mode-indentation-params '("lineup-concats" . nil))
-    (add-to-list 'web-mode-indentation-params '("lineup-calls" . nil)))
 
   ;; C++ settings
   (setq-default dotspacemacs-configuration-layers
