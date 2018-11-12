@@ -27,12 +27,17 @@ export PATH=$PATH:/Library/TeX/Distributions/.DefaultTeX/Contents/Programs/texbi
 
 # Preferred editor for local and remote sessions
 export ALTERNATE_EDITOR=""
-export EDITOR="emacsclient -t"                  # $EDITOR should open in terminal
-export VISUAL="emacsclient -c -a emacs"         # $VISUAL opens in GUI with non-daemon as alternate
-alias emacs='emacs -nw'
-alias emax="emacsclient -t"                      # used to be "emacs -nw"
-alias semac="sudo emacsclient -t"                # used to be "sudo emacs -nw"
-alias emacsc="emacsclient -c -a emacs"           # new - opens the GUI with alternate non-daemon
+if [[ -v INSIDE_EMACS ]]; then
+    export EDITOR="emacsclient"
+else
+    # Regular shell
+    export EDITOR="emacsclient -t"                  # $EDITOR should open in terminal
+    export VISUAL="emacsclient -c -a emacs"         # $VISUAL opens in GUI with non-daemon as alternate
+    alias emacs='emacs -nw'
+    alias emax="emacsclient -t"                      # used to be "emacs -nw"
+    alias semac="sudo emacsclient -t"                # used to be "sudo emacs -nw"
+    alias emacsc="emacsclient -c -a emacs"           # new - opens the GUI with alternate non-daemon
+fi
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
