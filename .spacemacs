@@ -65,7 +65,8 @@ This function should only modify configuration layer settings."
      org
      ;; osx
      ;; purescript
-     python
+     (python :variables
+             python-sort-imports-on-save t)
      react
      ;; ruby
      ;; ruby-on-rails
@@ -486,9 +487,6 @@ configuration.
 It is mostly for variables that should be set before packages are loaded.
 If you are unsure, try setting them in `dotspacemacs/user-config' first."
 
-  ;; Turn on fill-column-indicator when major-mode starts
-  (add-hook 'after-change-major-mode-hook 'fci-mode)
-
   ;; ReactJS settings
   (setq-default
    ;; js2-mode
@@ -522,10 +520,20 @@ before packages are loaded."
   ;; Use spacemacs for editing git commits messages
   (global-git-commit-mode t)
 
-  ;; Python settings
-  (setq-default dotspacemacs-configuration-layers
-                '((python :variables python-sort-imports-on-save t)))
-
+  ;; Python hooks
+  (add-hook 'python-mode-hook
+            (lambda ()
+              ;; Enable fill column indicator
+              (fci-mode t)
+              ;; Turn on line numbering
+              (linum-mode t)
+              (setq fill-column 81)
+              ;; Set tab-width to 4
+              (setq tab-width 4
+                    evil-shift-width 4)
+              ;; Enable automatic line wrapping at fill column
+              (auto-fill-mode t))
+            t)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
