@@ -39,21 +39,51 @@ This function should only modify configuration layer settings."
      ;; Uncomment some layer names and press `SPC f e R' (Vim style) or
      ;; `M-m f e R' (Emacs style) to install them.
      ;; ----------------------------------------------------------------
-     ;; auto-completion
-     ;; better-defaults
+     auto-completion
+     better-defaults
+     ;; c-c++
+     clojure
+     colors
+     csv
+     django
+     ;; docker
      emacs-lisp
-     ;; git
+     ;; emoji
+     ;; games
+     git
+     github
+     ;; go
+     haskell
      helm
-     ;; markdown
-     multiple-cursors
-     ;; org
-     ;; (shell :variables
-     ;;        shell-default-height 30
-     ;;        shell-default-position 'bottom)
-     ;; spell-checking
-     ;; syntax-checking
+     html
+     ;; java
+     javascript
+     latex
+     markdown
+     ;; multiple-cursors
+     ;; octave
+     org
+     ;; osx
+     ;; purescript
+     python
+     react
+     ;; ruby
+     ;; ruby-on-rails
+     ;; scala
+     selectric
+     (shell :variables
+            shell-default-height 30
+            shell-default-position 'bottom)
+     shell-scripts
+     spell-checking
+     sql
+     ;; swift
+     syntax-checking
      treemacs
-     ;; version-control
+     ;; typescript
+     version-control
+     ;; xkcd
+     yaml
      )
 
    ;; List of additional packages that will be installed without being
@@ -191,7 +221,8 @@ It should only modify the values of Spacemacs settings."
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press `SPC T n' to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '(spacemacs-dark
+   dotspacemacs-themes '(sanityinc-tomorrow-night
+                         spacemacs-dark
                          spacemacs-light)
 
    ;; Set the theme for the Spaceline. Supported themes are `spacemacs',
@@ -361,7 +392,7 @@ It should only modify the values of Spacemacs settings."
    ;;   :size-limit-kb 1000)
    ;; When used in a plist, `visual' takes precedence over `relative'.
    ;; (default nil)
-   dotspacemacs-line-numbers nil
+   dotspacemacs-line-numbers t
 
    ;; Code folding method. Possible values are `evil' and `origami'.
    ;; (default 'evil)
@@ -454,6 +485,24 @@ This function is called immediately after `dotspacemacs/init', before layer
 configuration.
 It is mostly for variables that should be set before packages are loaded.
 If you are unsure, try setting them in `dotspacemacs/user-config' first."
+
+  ;; Turn on fill-column-indicator when major-mode starts
+  (add-hook 'after-change-major-mode-hook 'fci-mode)
+
+  ;; ReactJS settings
+  (setq-default
+   ;; js2-mode
+   js2-basic-offset 2
+   ;; web-mode
+   css-indent-offset 2
+   web-mode-markup-indent-offset 2
+   web-mode-css-indent-offset 2
+   web-mode-code-indent-offset 2
+   web-mode-attr-indent-offset 2)
+  (with-eval-after-load 'web-mode
+    (add-to-list 'web-mode-indentation-params '("lineup-args" . nil))
+    (add-to-list 'web-mode-indentation-params '("lineup-concats" . nil))
+    (add-to-list 'web-mode-indentation-params '("lineup-calls" . nil)))
   )
 
 (defun dotspacemacs/user-load ()
@@ -469,6 +518,14 @@ This function is called at the very end of Spacemacs startup, after layer
 configuration.
 Put your configuration code here, except for variables that should be set
 before packages are loaded."
+
+  ;; Use spacemacs for editing git commits messages
+  (global-git-commit-mode t)
+
+  ;; Python settings
+  (setq-default dotspacemacs-configuration-layers
+                '((python :variables python-sort-imports-on-save t)))
+
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
