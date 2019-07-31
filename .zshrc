@@ -92,3 +92,6 @@ plugins=(
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
+
+# Anaconda3
+export PATH="$HOME/anaconda3/bin:$PATH"

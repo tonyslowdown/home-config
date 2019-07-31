@@ -3,9 +3,6 @@ export PATH=$HOME/bin:/usr/local/bin:$HOME/.local/bin:$PATH
 export HISTSIZE=999999999
 export SAVEHIST=999999999
 
-# Anaconda3 4.2.0
-export PATH="$HOME/anaconda3/bin:$PATH"
-
 # Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 

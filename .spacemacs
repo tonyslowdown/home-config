@@ -66,7 +66,9 @@ This function should only modify configuration layer settings."
      ;; osx
      ;; purescript
      (python :variables
-             python-sort-imports-on-save t)
+             python-sort-imports-on-save t
+             python-formatter 'yapf
+             python-format-on-save t)
      react
      ;; ruby
      ;; ruby-on-rails
