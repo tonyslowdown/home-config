@@ -525,8 +525,6 @@ before packages are loaded."
             (lambda ()
               ;; Enable fill column indicator
               (fci-mode t)
-              ;; Turn on line numbering
-              (linum-mode t)
               (setq fill-column 81)
               ;; Set tab-width to 4
               (setq tab-width 4
