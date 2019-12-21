@@ -6,3 +6,6 @@
 
 # Emacs
 *~
+
+# Zsh compiled cache
+*.zwc
