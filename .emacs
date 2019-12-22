@@ -13,7 +13,7 @@
 ;; Install packages
 (setq package-selected-packages
       '(ivy
-	sanityinc-tomorrow))
+	color-theme-sanityinc-tomorrow))
 (package-install-selected-packages)
 
 ;; Set up tomorrow night theme
