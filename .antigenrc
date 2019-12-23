@@ -1,4 +1,4 @@
-antigen bundle robbyrussell/oh-my-zsh lib/
+antigen use oh-my-zsh
 
 # Pure theme
 antigen bundle mafredri/zsh-async
