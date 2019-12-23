@@ -13,7 +13,8 @@
 ;; Install packages
 (setq package-selected-packages
       '(ivy
-	color-theme-sanityinc-tomorrow))
+	color-theme-sanityinc-tomorrow
+	undo-tree))
 (package-install-selected-packages)
 
 ;; Set up tomorrow night theme
@@ -24,6 +25,10 @@
 (ivy-mode 1)
 (setq ivy-use-virtual-buffers t)
 (setq ivy-count-format "(%d/%d) ")
+
+;; Set up undo tree
+(require 'undo-tree)
+(global-undo-tree-mode)
 
 ;; Custom auto-generated
 (custom-set-variables
