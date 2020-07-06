@@ -12,7 +12,8 @@
 
 ;; Install packages
 (setq package-selected-packages
-      '(ivy
+      '(eyebrowse
+	ivy
 	magit
 	multi-term
 	color-theme-sanityinc-tomorrow
@@ -22,6 +23,10 @@
 
 ;; Set up tomorrow night theme
 (require 'color-theme-sanityinc-tomorrow)
+
+;; Set up eyebrowse
+(require 'eyebrowse)
+(eyebrowse-mode t)
 
 ;; Set up magit
 (add-to-list 'load-path "~/.emacs.d/site-lisp/magit/lisp")
