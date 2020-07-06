@@ -14,7 +14,8 @@
 (setq package-selected-packages
       '(ivy
 	color-theme-sanityinc-tomorrow
-	undo-tree))
+	undo-tree
+	projectile))
 (package-install-selected-packages)
 
 ;; Set up tomorrow night theme
@@ -29,6 +30,12 @@
 ;; Set up undo tree
 (require 'undo-tree)
 (global-undo-tree-mode)
+
+;; Set up projectile
+(require 'projectile)
+(define-key projectile-mode-map (kbd "s-p") 'projectile-command-map)
+(define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
+(projectile-mode +1)
 
 ;; Custom auto-generated
 (custom-set-variables
