@@ -42,6 +42,15 @@
 (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
 (projectile-mode +1)
 
+;; Backup file management https://www.emacswiki.org/emacs/BackupDirectory
+(setq
+ backup-by-copying t      ; don't clobber symlinks
+ backup-directory-alist '(("." . "~/.saves/"))    ; don't litter my fs tree
+ delete-old-versions t
+ kept-new-versions 6
+ kept-old-versions 2
+ version-control t)       ; use versioned backups
+
 ;; Custom auto-generated
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
