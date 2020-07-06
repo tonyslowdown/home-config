@@ -13,6 +13,7 @@
 ;; Install packages
 (setq package-selected-packages
       '(ivy
+	magit
 	multi-term
 	color-theme-sanityinc-tomorrow
 	undo-tree
@@ -21,6 +22,16 @@
 
 ;; Set up tomorrow night theme
 (require 'color-theme-sanityinc-tomorrow)
+
+;; Set up magit
+(add-to-list 'load-path "~/.emacs.d/site-lisp/magit/lisp")
+(require 'magit)
+(with-eval-after-load 'info
+  (info-initialize)
+  (add-to-list 'Info-directory-list
+               "~/.emacs.d/site-lisp/magit/Documentation/"))
+(global-set-key (kbd "C-x g") 'magit-status)
+(global-set-key (kbd "C-x M-g") 'magit-dispatch-popup)
 
 ;; Set up multi-term
 (require 'multi-term)
