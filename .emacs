@@ -13,6 +13,7 @@
 ;; Install packages
 (setq package-selected-packages
       '(ivy
+	multi-term
 	color-theme-sanityinc-tomorrow
 	undo-tree
 	projectile))
@@ -20,6 +21,10 @@
 
 ;; Set up tomorrow night theme
 (require 'color-theme-sanityinc-tomorrow)
+
+;; Set up multi-term
+(require 'multi-term)
+(setq multi-term-program "/bin/zsh")
 
 ;; Set up ivy
 (require 'ivy)
