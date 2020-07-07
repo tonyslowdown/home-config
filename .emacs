@@ -29,8 +29,11 @@
   (let ((display-table (or buffer-display-table standard-display-table)))
     (set-display-table-slot display-table 5 ?│)
     (set-window-display-table (selected-window) display-table)))
-
 (add-hook 'window-configuration-change-hook 'my-change-window-divider)
+
+;; Show line numbers
+(when (version<= "26.0.50" emacs-version )
+  (global-display-line-numbers-mode))
 
 ;; Set up eyebrowse
 (require 'eyebrowse)
