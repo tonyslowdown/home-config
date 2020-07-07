@@ -24,6 +24,14 @@
 ;; Set up tomorrow night theme
 (require 'color-theme-sanityinc-tomorrow)
 
+;; Window divider
+(defun my-change-window-divider ()
+  (let ((display-table (or buffer-display-table standard-display-table)))
+    (set-display-table-slot display-table 5 ?│)
+    (set-window-display-table (selected-window) display-table)))
+
+(add-hook 'window-configuration-change-hook 'my-change-window-divider)
+
 ;; Set up eyebrowse
 (require 'eyebrowse)
 (eyebrowse-mode t)
@@ -66,6 +74,7 @@
  kept-new-versions 6
  kept-old-versions 2
  version-control t)       ; use versioned backups
+
 
 ;; Custom auto-generated
 (custom-set-variables
