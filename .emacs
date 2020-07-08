@@ -50,6 +50,12 @@
 (global-set-key (kbd "C-x g") 'magit-status)
 (global-set-key (kbd "C-x M-g") 'magit-dispatch-popup)
 
+;; Set up markdown-mode
+(require 'markdown-mode)
+(setq markdown-command '("pandoc" "--from=markdown" "--to=html5"))
+(setq markdown-fontify-code-blocks-natively t)
+(setq markdown-css-paths '("~/home-config/pandoc.css"))
+
 ;; Set up multi-term
 (require 'multi-term)
 (setq multi-term-program "/bin/zsh")
