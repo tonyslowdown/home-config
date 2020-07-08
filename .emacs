@@ -15,6 +15,7 @@
       '(eyebrowse
 	ivy
 	magit
+	markdown-mode
 	multi-term
 	color-theme-sanityinc-tomorrow
 	undo-tree
