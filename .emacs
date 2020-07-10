@@ -25,6 +25,16 @@
 ;; Set up tomorrow night theme
 (require 'color-theme-sanityinc-tomorrow)
 
+;; Activate winner-mode
+(when (fboundp 'winner-mode)
+  (winner-mode 1))
+
+;; Set up windmove
+(global-set-key (kbd "C-c h") 'windmove-left)
+(global-set-key (kbd "C-c l") 'windmove-right)
+(global-set-key (kbd "C-c k") 'windmove-up)
+(global-set-key (kbd "C-c j") 'windmove-down)
+
 ;; Window divider
 (defun my-change-window-divider ()
   (let ((display-table (or buffer-display-table standard-display-table)))
@@ -35,6 +45,15 @@
 ;; Show line numbers
 (when (version<= "26.0.50" emacs-version )
   (global-display-line-numbers-mode))
+
+;; Backup file management https://www.emacswiki.org/emacs/BackupDirectory
+(setq
+ backup-by-copying t      ; don't clobber symlinks
+ backup-directory-alist '(("." . "~/.saves/"))    ; don't litter my fs tree
+ delete-old-versions t
+ kept-new-versions 6
+ kept-old-versions 2
+ version-control t)       ; use versioned backups
 
 ;; Set up eyebrowse
 (require 'eyebrowse)
@@ -75,15 +94,6 @@
 (define-key projectile-mode-map (kbd "s-p") 'projectile-command-map)
 (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
 (projectile-mode +1)
-
-;; Backup file management https://www.emacswiki.org/emacs/BackupDirectory
-(setq
- backup-by-copying t      ; don't clobber symlinks
- backup-directory-alist '(("." . "~/.saves/"))    ; don't litter my fs tree
- delete-old-versions t
- kept-new-versions 6
- kept-old-versions 2
- version-control t)       ; use versioned backups
 
 
 ;; Custom auto-generated
