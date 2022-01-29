@@ -19,7 +19,8 @@
 	multi-term
 	color-theme-sanityinc-tomorrow
 	undo-tree
-	projectile))
+	projectile
+	rust-mode))
 (package-install-selected-packages)
 
 ;; Set up tomorrow night theme
@@ -94,6 +95,14 @@
 (define-key projectile-mode-map (kbd "s-p") 'projectile-command-map)
 (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
 (projectile-mode +1)
+
+;; Rust
+(require 'rust-mode)
+(add-hook 'rust-mode-hook
+	  (lambda () (setq indent-tabs-mode nil)))
+(define-key rust-mode-map (kbd "C-c C-c") 'rust-run)
+(define-key rust-mode-map (kbd "C-c C-b") 'rust-compile)
+(define-key rust-mode-map (kbd "C-c C-t") 'rust-test)
 
 
 ;; Custom auto-generated

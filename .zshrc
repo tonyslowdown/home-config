@@ -15,3 +15,7 @@ compinit
 # Antigen
 source $HOME/antigen.zsh
 antigen init $HOME/home-config/.antigenrc
+
+# Path
+export PATH="$PATH:$HOME/flutter/bin"
+export PATH="/usr/local/sbin:$PATH"
