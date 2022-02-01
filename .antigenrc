@@ -2,7 +2,7 @@ antigen use oh-my-zsh
 
 # Pure theme
 antigen bundle mafredri/zsh-async
-antigen bundle sindresorhus/pure
+antigen bundle sindresorhus/pure@main
 # antigen theme avit
 
 antigen bundle git
