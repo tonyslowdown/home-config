@@ -5,16 +5,21 @@ SAVEHIST=999999
 setopt appendhistory autocd extendedglob notify
 bindkey -e
 # End of lines configured by zsh-newuser-install
-# The following lines were added by compinstall
-zstyle :compinstall filename '$HOME/.zshrc'
 
-autoload -Uz compinit
-compinit
-# End of lines added by compinstall
-
-# Antigen
-# source $HOME/antigen.zsh
-# antigen init $HOME/home-config/.antigenrc
+# Zsh config
+alias ls='ls -G'
+#FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
+autoload -U promptinit; promptinit
+prompt pure
+source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+if type brew &>/dev/null; then
+    FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
+    autoload -Uz compinit
+    compinit
+fi
+source $HOME/ohmyzsh/plugins/common-aliases/common-aliases.plugin.zsh
+source $HOME/ohmyzsh/plugins/git/git.plugin.zsh
 
 # Path
 export PATH="$PATH:$HOME/flutter/bin"

@@ -1,12 +1,24 @@
 # Let's Go "Minimal"
 
-## Zsh without ohmyzsh
+## Basic Terminal
 
-* [antigen](https://github.com/zsh-users/antigen#installation)
+* Install homebrew
+* Install latest zsh version from homebrew and set that as default zsh shell
 * MacOS terminal theme (tomorrow night) from https://github.com/lysyi3m
 
-## Emacs without spacemacs
 
+## Lightweight zsh setup
+
+* brew install node
+* npm install --global pure-prompt 
+* brew install zsh-syntax-highlighting
+* brew install zsh-autosuggestions
+* brew install zsh-completions
+* cd $HOME; git clone https://github.com/ohmyzsh/ohmyzsh.git
+
+## Emacs
+
+* brew install emacs-plus --without-cocoa --with-imagemagick
 * daemon server and emacsclient
 
 ## Set up new computer
