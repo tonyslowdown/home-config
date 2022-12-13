@@ -9,17 +9,27 @@
 
 ## Lightweight zsh setup
 
-* brew install node
-* npm install --global pure-prompt 
-* brew install zsh-syntax-highlighting
-* brew install zsh-autosuggestions
-* brew install zsh-completions
-* cd $HOME; git clone https://github.com/ohmyzsh/ohmyzsh.git
+```zsh
+brew install node
+npm install --global pure-prompt 
+
+brew install zsh-syntax-highlighting
+brew install zsh-autosuggestions
+brew install zsh-completions
+
+cd $HOME
+git clone https://github.com/ohmyzsh/ohmyzsh.git
+```
+
 
 ## Emacs
 
-* brew install emacs-plus --without-cocoa --with-imagemagick
-* daemon server and emacsclient
+```zsh
+brew tap d12frosted/emacs-plus
+brew install emacs-plus --without-cocoa --with-imagemagick
+Set up daemon server and emacsclient
+```
+
 
 ## Set up new computer
 
