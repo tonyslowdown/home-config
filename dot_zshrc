@@ -9,6 +9,11 @@ bindkey -e
 # Aliases
 alias ls='ls -G'
 
+# Path
+export PATH="$PATH:$HOME/flutter/bin"
+export PATH="/usr/local/sbin:$PATH"
+export PATH="/opt/homebrew/bin:$PATH"
+
 # Zsh config
 FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
 autoload -U promptinit; promptinit
@@ -22,8 +27,3 @@ if type brew &>/dev/null; then
 fi
 source $HOME/ohmyzsh/plugins/common-aliases/common-aliases.plugin.zsh
 source $HOME/ohmyzsh/plugins/git/git.plugin.zsh
-
-# Path
-export PATH="$PATH:$HOME/flutter/bin"
-export PATH="/usr/local/sbin:$PATH"
-export PATH="/opt/homebrew/bin:$PATH"
