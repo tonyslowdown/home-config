@@ -53,8 +53,8 @@ git clone https://github.com/ohmyzsh/ohmyzsh.git $ZSH_PLUGIN_DIR/ohmyzsh
 ## Create symlinks to dot config files
 
 ```zsh
+ln -sf $HOME/home-config/h.zshrc ~/.zshrc
 ln -sf $HOME/home-config/h.emacs ~/.emacs
 ln -sf $HOME/home-config/h.gitconfig ~/.gitconfig
 ln -sf $HOME/home-config/h.gitignore_global ~/.gitignore_global
-ln -sf $HOME/home-config/h.zshrc ~/.zshrc
 ```
