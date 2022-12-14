@@ -19,7 +19,9 @@ Optional: Set up daemon server and emacsclient
 
 ### Install node/npm
 
-`brew install node`
+```zsh
+brew install node
+```
 
 ### Install latest zsh version from homebrew and set that as default zsh shell
 
@@ -28,7 +30,9 @@ Optional: Set up daemon server and emacsclient
 
 ### Install node/npm
 
-`sudo apt-get install npm && sudo npm install -g npm`
+```zsh
+sudo apt-get install npm && sudo npm install -g npm
+```
 
 
 ## Configure zsh
@@ -49,8 +53,8 @@ git clone https://github.com/ohmyzsh/ohmyzsh.git $ZSH_PLUGIN_DIR/ohmyzsh
 ## Create symlinks to dot config files
 
 ```zsh
-ln -s $HOME/home-config/dot_emacs ~/.emacs
-ln -s $HOME/home-config/dot_gitconfig ~/.gitconfig
-ln -s $HOME/home-config/dot_gitignore_global ~/.gitignore_global
-ln -s $HOME/home-config/dot_zshrc ~/.zshrc
+ln -sf $HOME/home-config/h.emacs ~/.emacs
+ln -sf $HOME/home-config/h.gitconfig ~/.gitconfig
+ln -sf $HOME/home-config/h.gitignore_global ~/.gitignore_global
+ln -sf $HOME/home-config/h.zshrc ~/.zshrc
 ```
