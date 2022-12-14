@@ -6,24 +6,29 @@ setopt appendhistory autocd extendedglob notify
 bindkey -e
 # End of lines configured by zsh-newuser-install
 
-# Aliases
+# Generic
 alias ls='ls -G'
-
-# Path
-export PATH="$PATH:$HOME/flutter/bin"
 export PATH="/usr/local/sbin:$PATH"
-export PATH="/opt/homebrew/bin:$PATH"
 
-# Zsh config
-FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
+# Pure prompt
+if [[ `uname` == "Darwin" ]]; then
+    export PATH="/opt/homebrew/bin:$PATH"
+    FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
+elif [[ `uname` == "Linux" ]]; then  # elif command -v apt > /dev/null; then
+    FPATH=/usr/share/zsh/site-functions:$FPATH
+fi
 autoload -U promptinit; promptinit
 prompt pure
-source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-if type brew &>/dev/null; then
-    FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
-    autoload -Uz compinit
-    compinit
-fi
-source $HOME/ohmyzsh/plugins/common-aliases/common-aliases.plugin.zsh
-source $HOME/ohmyzsh/plugins/git/git.plugin.zsh
+
+# Zsh plugins
+ZSH_PLUGIN_DIR=$HOME/.zsh
+source $ZSH_PLUGIN_DIR/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $ZSH_PLUGIN_DIR/zsh-autosuggestions/zsh-autosuggestions.zsh
+FPATH=$ZSH_PLUGIN_DIR/zsh-completions/src:$FPATH
+autoload -Uz compinit
+compinit
+source $ZSH_PLUGIN_DIR/ohmyzsh/plugins/common-aliases/common-aliases.plugin.zsh
+source $ZSH_PLUGIN_DIR/ohmyzsh/plugins/git/git.plugin.zsh
+
+# Flutter
+export PATH="$PATH:$HOME/flutter/bin"

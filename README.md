@@ -1,41 +1,56 @@
-# Let's Go "Minimal"
+# Lightweight Home Directory Config
 
-## Basic Terminal
+## MacOs
 
-* Install homebrew
-* Install latest zsh version from homebrew and set that as default zsh shell
-* MacOS terminal theme (tomorrow night) from https://github.com/lysyi3m
+### Install homebrew
 
+### MacOS terminal theme
 
-## Lightweight zsh setup
+"Tomorrow Night" from https://github.com/lysyi3m
 
-```zsh
-brew install node
-npm install --global pure-prompt 
-
-brew install zsh-syntax-highlighting
-brew install zsh-autosuggestions
-brew install zsh-completions
-
-cd $HOME
-git clone https://github.com/ohmyzsh/ohmyzsh.git
-```
-
-
-## Emacs
+### Emacs
 
 ```zsh
 brew tap d12frosted/emacs-plus
 brew install emacs-plus --without-cocoa --with-imagemagick
-Set up daemon server and emacsclient
 ```
 
+Optional: Set up daemon server and emacsclient
 
-## Set up new computer
+### Install node/npm
+
+`brew install node`
+
+### Install latest zsh version from homebrew and set that as default zsh shell
+
+
+## Ubuntu/Debian
+
+### Install node/npm
+
+`sudo apt-get install npm && sudo npm install -g npm`
+
+
+## Configure zsh
 
 ```zsh
-ln -s ~/home-config/dot_emacs ~/.emacs
-ln -s ~/home-config/dot_gitconfig ~/.gitconfig
-ln -s ~/home-config/dot_gitignore_global ~/.gitignore_global
-ln -s ~/home-config/dot_zshrc ~/.zshrc
+# Zsh pure prompt
+npm install --global pure-prompt
+
+# Download plugins
+ZSH_PLUGIN_DIR=$HOME/.zsh
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_PLUGIN_DIR/zsh-syntax-highlighting
+git clone https://github.com/zsh-users/zsh-autosuggestions $ZSH_PLUGIN_DIR/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-completions.git $ZSH_PLUGIN_DIR/zsh-completions
+rm -f ~/.zcompdump; compinit
+git clone https://github.com/ohmyzsh/ohmyzsh.git $ZSH_PLUGIN_DIR/ohmyzsh
+```
+
+## Create symlinks to dot config files
+
+```zsh
+ln -s $HOME/home-config/dot_emacs ~/.emacs
+ln -s $HOME/home-config/dot_gitconfig ~/.gitconfig
+ln -s $HOME/home-config/dot_gitignore_global ~/.gitignore_global
+ln -s $HOME/home-config/dot_zshrc ~/.zshrc
 ```
