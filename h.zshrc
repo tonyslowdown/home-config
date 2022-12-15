@@ -7,14 +7,15 @@ bindkey -e
 # End of lines configured by zsh-newuser-install
 
 # Generic
-alias ls='ls -G'
 export PATH="/usr/local/sbin:$PATH"
 
 # Pure prompt
 if [[ `uname` == "Darwin" ]]; then
+    alias ls='ls -G'
     export PATH="/opt/homebrew/bin:$PATH"
     FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
 elif [[ `uname` == "Linux" ]]; then  # elif command -v apt > /dev/null; then
+    alias ls='ls --color=auto'
     FPATH=/usr/share/zsh/site-functions:$FPATH
 fi
 autoload -U promptinit; promptinit
