@@ -8,6 +8,7 @@ bindkey -e
 
 # Generic
 export PATH="/usr/local/sbin:$PATH"
+export EDITOR="emacs -nw"
 
 # Pure prompt
 if [[ `uname` == "Darwin" ]]; then
